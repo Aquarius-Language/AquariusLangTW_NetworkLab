@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-15",
+  "release": "AquariusCompiler-win-x64-20261015-204220-176af51c",
+  "compiler": "C:\\OfficialProjects\\AquariusLangTW\\dist\\releases\\AquariusCompiler-win-x64-20261015-204220-176af51c\\aqua\\aqua.exe",
+  "releaseZipSha256": "529dc39555e9537deac9692b3ad6445901a4bc325df7605047402942bc8c603c",
+  "tests": {
+    "dotnet": {
+      "passed": 1657,
+      "skipped": 35,
+      "failed": 0
+    },
+    "browserNode": {
+      "passed": 326,
+      "failed": 0
+    },
+    "androidBridgeNode": {
+      "passed": 5,
+      "failed": 0
+    },
+    "languageServer": {
+      "passed": 22,
+      "failed": 0
+    },
+    "androidJava": {
+      "passed": 17,
+      "failed": 0
+    }
+  },
+  "integration": {
+    "buildScript": "Passed: frontend/backend Wasm, frontend/backend standalone Windows EXE, website, Android APK",
+    "launchVerification": "Passed",
+    "desktop": "Windows standalone EXE: UI, repeated HTTP JSON, cookie sessions; DNS/TCP/UDP/WebSocket round trips",
+    "web": "Chrome: UI, HTTP JSON, cookie sessions, HTTP 422, WebSocket, 2948 rendered colors",
+    "android": "API 35 x86_64 emulator: UI, repeated HTTP JSON, cookie sessions; native DNS/TCP/UDP/WebSocket round trips",
+    "releaseAssetsMatchSource": true
+  },
+  "limitations": [
+    "Ordinary web pages do not expose raw TCP/UDP sockets; capability queries report unsupported.",
+    "iOS has the portable adapter contracts but no packaged iOS host in this repository.",
+    "Server sessions are held in process memory."
+  ]
+}

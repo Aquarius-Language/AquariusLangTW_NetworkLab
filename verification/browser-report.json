@@ -1,0 +1,21 @@
+{
+  "verification": {
+    "result": "真",
+    "output": "網路驗證完成 真 工作階段次數 2\n真\n"
+  },
+  "protocols": {
+    "result": "真",
+    "output": "網路協定驗證完成 真\n真\n"
+  },
+  "ui": {
+    "result": "真",
+    "output": "網路往返成功 1 工作階段 3\n網路往返成功 2 工作階段 4\n網路往返成功 3 工作階段 5\n網路往返成功 4 工作階段 6\n真\n"
+  },
+  "capabilities": [
+    "http",
+    "cookies",
+    "websocket"
+  ],
+  "colors": 2948,
+  "errors": []
+}
