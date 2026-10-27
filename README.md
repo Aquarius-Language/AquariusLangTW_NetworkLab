@@ -12,7 +12,7 @@
 ```
 
 `Build.ps1 -Platforms web,desktop` 可只建置指定平台。桌面封裝產生 Windows x64 EXE；
-同一份 Wasm 亦可在 Linux 桌面主機執行。Android APK 建置需要 JDK、Android SDK 及 Gradle；
+同一份 Wasm 亦可在 Linux 桌面主機執行。Android APK 建置使用目前 SDK 的 Android runtime pack、JDK 與 Android SDK；
 啟動時以 `adb reverse` 把裝置的 8787 連接埠連回本機，適用模擬器與 USB 實機。
 有多個裝置時請明確指定 `-Device`。
 
@@ -27,7 +27,7 @@
 這個範例使用輪詢 HTTP 展示每次請求／回應；網路函式庫另提供 WebSocket、SSE、
 原始 TCP／TLS 和 UDP。一般瀏覽器不開放原始 TCP／UDP，請先用 `網路.支援(...)` 查詢。
 `協定驗證.aqua` 是開發用的 DNS／TCP／UDP／WebSocket 檢查；執行前需在編譯器原始碼目錄
-啟動 `node AquariusWebCompiler/tests/network-echo.mjs`，並啟動本專案後端。
+分別執行 `aqua run tests/tcp-peer.aqua`、`aqua run tests/udp-peer.aqua`，並啟動本專案後端。
 範例的工作階段存於記憶體，重啟後清除；正式部署請設定 HTTPS 憑證及明確的來源政策。
 
 本機交付的 Use-Aqua.ps1 可將本次正式版加入目前 PowerShell 工作階段的 PATH。

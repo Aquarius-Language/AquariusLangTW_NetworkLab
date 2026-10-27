@@ -1,4 +1,4 @@
-﻿param(
+param(
     [ValidateSet('desktop','web','android')][string]$Platform = 'web',
     [string]$Device = 'emulator-5554',
     [switch]$Verify
@@ -37,11 +37,11 @@ try {
         if ($LASTEXITCODE -ne 0) { throw "無法建立裝置 $Device 的連線。" }
         & adb -s $Device install -r dist/frontend.apk
         if ($LASTEXITCODE -ne 0) { throw 'Android 安裝失敗。' }
-        & adb -s $Device shell am start -n org.aquariuslang.networklab/org.aquariuslang.android.AquariusActivity
+        & adb -s $Device shell am start -n org.aquariuslang.networklab/org.aquariuslang.runtime.AquariusActivity
         if ($LASTEXITCODE -ne 0) { throw 'Android 啟動失敗。' }
         Read-Host '按 Enter 停止後端服務' | Out-Null
     }
 } finally {
-    if ($backendProcess -and -not $backendProcess.HasExited) { Stop-Process -Id $backendProcess.Id }
+    if ($backendProcess -and -not $backendProcess.HasExited) { & taskkill /PID $backendProcess.Id /T /F | Out-Null }
     Pop-Location
 }
